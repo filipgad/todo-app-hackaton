@@ -1,0 +1,9 @@
+
+<h2 mat-dialog-title>Delete task</h2>
+<mat-dialog-content class="mat-typography">
+    <p>Are you sure you want delete this task?</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-stroked-button mat-dialog-close>Cancel</button>
+    <button mat-flat-button color="warn" [mat-dialog-close]="true" (click)="onConfirmClicked()">Delete task</button>
+</mat-dialog-actions>

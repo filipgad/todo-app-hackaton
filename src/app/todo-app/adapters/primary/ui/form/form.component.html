@@ -1,0 +1,3 @@
+<textarea placeholder="Write your message here" [formControl]="taskField"></textarea>
+<button class="btn" type="button" [disabled]="!taskField.valid" (click)="onAddTaskClicked()">Add task</button>
+<a class="btn" [routerLink]="'/'">Cancel</a>
