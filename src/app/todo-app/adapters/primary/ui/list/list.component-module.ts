@@ -7,6 +7,8 @@ import {RemoveTaskConfirmationModalComponent} from "./remove-task-confirmation-m
 import {ShowsRemoveTaskConfirmationModalCommand} from "../../../../application/ports/primary/shows-remove-task-confirmation-modal.command";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import {MatButtonModule} from "@angular/material/button";
     CommonModule,
     FormComponentModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [
     {

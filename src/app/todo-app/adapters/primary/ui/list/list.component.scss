@@ -1,3 +1,23 @@
 .line-through {
   text-decoration: line-through;
 }
+
+.list-row {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  justify-self: center;
+  max-width: 1000px;
+
+  &-status {
+    width: 50px;
+  }
+
+  &-value {
+    flex: 1;
+  }
+
+  &-menu {
+    width: 50px;
+  }
+}

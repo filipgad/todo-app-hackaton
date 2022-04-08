@@ -1,8 +1,16 @@
 <ul *ngIf="tasks$ | async as tasks ">
-    <li *ngFor="let task of tasks">
-        <input type="checkbox" [checked]="task.completed" (click)="onCheckboxClicked(task.id)" />
-        <p [class.line-through]="task.completed">{{task.value}}</p>
-        <button type="button" (click)="onDeleteClicked(task.id)">Delete</button>
+    <li *ngFor="let task of tasks" class="list-row">
+        <input class="list-row-status" type="checkbox" [checked]="task.completed" (click)="onCheckboxClicked(task.id)" />
+        <p class="list-row-value" [class.line-through]="task.completed">{{task.value}}</p>
+        <button class="list-row-menu" mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="onDeleteClicked(task.id)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+            </button>
+        </mat-menu>
     </li>
 </ul>
 <app-form></app-form>

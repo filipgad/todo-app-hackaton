@@ -1,3 +1,7 @@
-<textarea placeholder="Write your message here" [formControl]="taskField"></textarea>
-<button class="btn" type="button" [disabled]="!taskField.valid" (click)="onAddTaskClicked()">Add task</button>
-<a class="btn" [routerLink]="'/'">Cancel</a>
+<mat-form-field appearance="outline">
+    <textarea placeholder="Write your message here" [formControl]="taskField" matInput></textarea>
+</mat-form-field>
+<div>
+    <button mat-flat-button color="primary" type="button" [disabled]="!taskField.valid" (click)="onAddTaskClicked()">Add task</button>
+    <a mat-stroked-button [routerLink]="'/'">Cancel</a>
+</div>
