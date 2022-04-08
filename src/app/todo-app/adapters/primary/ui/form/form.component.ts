@@ -15,6 +15,7 @@ export class FormComponent {
 
   onAddTaskClicked(): void {
     this._addsTaskCommand.addTask(new AddsTaskCommand(this.taskField.value));
+    this.taskField.setValue('');
   }
 
 }

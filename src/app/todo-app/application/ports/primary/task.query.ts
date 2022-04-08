@@ -4,14 +4,14 @@ export class TaskQuery {
     private constructor(
         readonly id: string,
         readonly value: string,
-        readonly isDone: boolean
+        readonly completed: boolean
     ) {}
 
     static fromTaskDTO(dto: TaskDTO): TaskQuery {
         return new TaskQuery(
             dto.id,
             dto.value,
-            dto.isDone
+            dto.completed
         );
     }
 }

@@ -1,7 +1,7 @@
 <ul *ngIf="tasks$ | async as tasks ">
     <li *ngFor="let task of tasks">
-        <input type="checkbox" [checked]="task.isDone" (click)="onCheckboxClicked(task.id)" />
-        <p [class.line-through]="task.isDone">{{task.value}}</p>
+        <input type="checkbox" [checked]="task.completed" (click)="onCheckboxClicked(task.id)" />
+        <p [class.line-through]="task.completed">{{task.value}}</p>
         <button type="button" (click)="onDeleteClicked(task.id)">Delete</button>
     </li>
 </ul>
