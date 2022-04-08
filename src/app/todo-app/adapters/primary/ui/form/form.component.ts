@@ -9,7 +9,7 @@ import {AddsTaskCommand} from "../../../../application/ports/primary/adds-task.c
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
-  readonly taskField = new FormControl('', [Validators.required]);
+  readonly taskField = new FormControl('');
 
   constructor(@Inject(ADDS_TASK_COMMAND) private _addsTaskCommand: AddsTaskCommandPort) { }
 
