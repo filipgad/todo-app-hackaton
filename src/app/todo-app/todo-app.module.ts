@@ -8,6 +8,7 @@ import {InMemoryStorage} from "../storage/in-memory/in-memory.storage";
 import {HttpSyncTaskServiceModule} from "./adapters/secondary/infrastructure/http-sync-task.service-module";
 import {TODOIST_API_TOKEN} from "./todoist-api-token";
 import {environment} from "../../environments/environment";
+import {API_URL} from "./api-url";
 
 @NgModule({
   declarations: [],
@@ -20,7 +21,8 @@ import {environment} from "../../environments/environment";
     ],
   providers: [
     {provide: TASK_STORAGE, useFactory: () => new InMemoryStorage<Task>()},
-    {provide: TODOIST_API_TOKEN, useValue: environment.todoistToken}
+    {provide: TODOIST_API_TOKEN, useValue: environment.todoistToken},
+    {provide: API_URL, useValue: environment.todoistApiUrl}
   ]
 })
 export class TodoAppModule { }
