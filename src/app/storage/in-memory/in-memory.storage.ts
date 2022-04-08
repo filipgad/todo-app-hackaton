@@ -5,7 +5,7 @@ export class InMemoryStorage<T> implements Storage<T> {
     private readonly _storeSubject$: BehaviorSubject<Map<string, T>> = new BehaviorSubject<Map<string, T>>(new Map());
     private readonly _store$: Observable<Map<string, T>> = this._storeSubject$.asObservable();
 
-    save(id: string, value: T): void {
+    set(id: string, value: T): void {
         const currentStorageMap = this._storeSubject$.value
         const newMap = new Map(currentStorageMap);
         newMap.set(id, value);

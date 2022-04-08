@@ -1,7 +1,8 @@
 import {Observable} from "rxjs";
 
 export interface Storage<T> {
-    save(id: string, value: T): void;
-    remove(id: string): void;
+    set(id: string, value: T): void;
+    get(id: string): T | undefined;
     getAll(): Observable<T[]>;
+    remove(id: string): void;
 }

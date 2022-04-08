@@ -23,7 +23,7 @@ export class TodoAppState implements GetsAllTasksQueryPort, AddsTaskCommandPort,
 
     addTask(command: AddsTaskCommand) {
         this._addsTaskDto.add(command.value).subscribe(task => {
-            this._taskStorage.save(task.id, task);
+            this._taskStorage.set(task.id, task);
         });
     }
 
@@ -34,7 +34,7 @@ export class TodoAppState implements GetsAllTasksQueryPort, AddsTaskCommandPort,
     changeTaskStatus(command: ChangesTaskStatusCommand) {
         const task = this._taskStorage.get(command.id);
 
-        task && this._taskStorage.save(command.id, {...task, completed: !task.completed});
+        task && this._taskStorage.set(command.id, {...task, completed: !task.completed});
     }
 
     getAllTasksQuery(): Observable<TaskQuery[]> {
